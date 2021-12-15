@@ -1,8 +1,11 @@
+require('dotenv').config({
+  path: `.env`,
+})
 module.exports = {
   siteMetadata: {
     title: `My Portfolio`,
-        description: `My Portfolio`,
-    author: `Sagar Kumar Shrivastava`,
+      description: `My Portfolio`,
+      author: `Sagar Kumar Shrivastava`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +22,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
       },
     },
     `gatsby-transformer-sharp`,
