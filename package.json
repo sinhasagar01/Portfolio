@@ -22,6 +22,7 @@
     "gatsby-source-prismic-graphql": "3.4.0-beta.1",
     "gatsby-transformer-sharp": "^2.2.16",
     "lodash": "^4.17.21",
+    "lodash.get": "^4.4.2",
     "node-sass": "^4.12.0",
     "prismic-reactjs": "^1.1.1",
     "prop-types": "^15.7.2",
@@ -54,7 +55,11 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "preinstall": "npx npm-force-resolutions",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "resolutions": {
+    "gatsby-source-graphql-universal": "3.3.0"
   },
   "repository": {
     "type": "git",
